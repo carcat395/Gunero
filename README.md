@@ -1,0 +1,2 @@
+# Gunero
+ tugas mwgp
