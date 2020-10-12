@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ScreenEdge
   - Obstacle
+  - Enemies
   layers:
   - Default
   - TransparentFX

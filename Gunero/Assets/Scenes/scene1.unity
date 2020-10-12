@@ -481,6 +481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4882696306852535503, guid: edc94c1b0b72b344ea93f97041b2a72b, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edc94c1b0b72b344ea93f97041b2a72b, type: 3}
 --- !u!1 &1393343213
@@ -625,10 +629,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletResource: {fileID: 3071407814769789065, guid: 61093a200139caf4a885a896154c7d84, type: 3}
+  AttackRange: {fileID: 0}
   cooldown: 0.7
   bulletSpeed: 5
   bulletVelocity: {x: 1, y: 0}
   angle: 90
+  rangeScale: 0
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1428714996
 GameObject:
   m_ObjectHideFlags: 0
