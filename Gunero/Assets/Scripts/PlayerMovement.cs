@@ -13,15 +13,18 @@ public class PlayerMovement : MonoBehaviour
         if(Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
+        }
+    }
 
-            if(touch.phase == TouchPhase.Moved)
-            {
-                transform.position = new Vector3(
-                    transform.position.x + touch.deltaPosition.x * speed * Time.deltaTime,
-                    transform.position.y + touch.deltaPosition.y * speed * Time.deltaTime,
-                    transform.position.z
-                    );
-            }
+    void FixedUpdate()
+    {
+        if (touch.phase == TouchPhase.Moved)
+        {
+            transform.position = new Vector3(
+                transform.position.x + touch.deltaPosition.x * speed * Time.deltaTime,
+                transform.position.y + touch.deltaPosition.y * speed * Time.deltaTime,
+                transform.position.z
+                );
         }
     }
 }
