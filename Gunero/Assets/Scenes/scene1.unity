@@ -236,6 +236,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &631363463 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4882696306852535503, guid: edc94c1b0b72b344ea93f97041b2a72b, type: 3}
+  m_PrefabInstance: {fileID: 1299704788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &631363464
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631363463}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.3333333, y: 2.3333333}
+    newSize: {x: 0.56, y: 0.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3333333, y: 2.3333333}
+  m_EdgeRadius: 0
 --- !u!1 &799890704
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +514,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4882696306852535503, guid: edc94c1b0b72b344ea93f97041b2a72b, type: 3}
       propertyPath: m_TagString
-      value: Enemies
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882696306852535503, guid: edc94c1b0b72b344ea93f97041b2a72b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edc94c1b0b72b344ea93f97041b2a72b, type: 3}
@@ -629,15 +664,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletResource: {fileID: 3071407814769789065, guid: 61093a200139caf4a885a896154c7d84, type: 3}
-  AttackRange: {fileID: 0}
-  cooldown: 0.7
+  cooldown: 1
   bulletSpeed: 5
   bulletVelocity: {x: 1, y: 0}
-  angle: 90
-  rangeScale: 0
+  rangeScale: 20
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!1 &1428714996
 GameObject:
   m_ObjectHideFlags: 0
