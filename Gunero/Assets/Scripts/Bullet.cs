@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public Vector2 velocity;
     public float speed;
     public float rotation;
+    public bool enemyBullet;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +23,20 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Obstacle")
+        if (collision.tag == "Obstacle" || collision.tag == "Player" || collision.tag == "Enemy")
         {
-           Destroy(gameObject);
+            if (enemyBullet && collision.tag == "Enemy")
+            {
+                return;
+            }
+            else if (!enemyBullet && collision.tag == "Player")
+            {
+                return;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

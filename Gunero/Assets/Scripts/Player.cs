@@ -9,9 +9,10 @@ public class Player : MonoBehaviour
     int HP;
     public float recoveryTime;
     float recoveryTimer;
+    bool isDead;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         HP = MaxHP;
     }
@@ -24,11 +25,23 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Bullet" && recoveryTimer <= 0)
+        if(collision.tag == "Enemy Bullet" && recoveryTimer <= 0)
         {
-            HP -= 1;
-            print(HP);
+            HP -= 5;
+            Debug.Log("Player HP:" + HP);
             recoveryTimer = recoveryTime;
+            if (HP <= 0)
+            {
+                Debug.Log("Player ded");
+                isDead = true;
+                Time.timeScale = 0f;
+            }
         }
+    }
+
+    void OnGUI()
+    {
+        if(isDead)
+        GUI.Box(new Rect(0, 0, 400F, 600f), "Player Dead");
     }
 }
