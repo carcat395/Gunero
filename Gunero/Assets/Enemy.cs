@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     Vector3 currPos;
     Vector3 lastPos;
     bool isDead;
+    public HealthBar healthbar;
 
     // Start is called before the first frame update
     void Awake()
@@ -28,6 +29,7 @@ public class Enemy : MonoBehaviour
         timer = moveTimer;
         isMoving = false;
         HP = maxHP;
+        healthbar.SetMaxHealth(maxHP);
     }
 
     private void Start()
@@ -83,6 +85,7 @@ public class Enemy : MonoBehaviour
         if (collision.tag == "Player BUllet")
         {
             HP -= 5;
+            healthbar.SetHealth(HP);
             Debug.Log("Enemy HP:" + HP);
             if (HP <= 0)
             {
@@ -96,6 +99,6 @@ public class Enemy : MonoBehaviour
     void OnGUI()
     {
         if (isDead)
-            GUI.Box(new Rect(0, 0, 400F, 600f), "Enemy Dead");
+            GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "Enemy Dead");
     }
 }

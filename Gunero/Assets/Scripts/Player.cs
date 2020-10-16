@@ -10,11 +10,13 @@ public class Player : MonoBehaviour
     public float recoveryTime;
     float recoveryTimer;
     bool isDead;
+    public HealthBar healthbar;
 
     // Start is called before the first frame update
     void Awake()
     {
         HP = MaxHP;
+        healthbar.SetMaxHealth(MaxHP);
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour
         if(collision.tag == "Enemy Bullet" && recoveryTimer <= 0)
         {
             HP -= 5;
+            healthbar.SetHealth(HP);
             Debug.Log("Player HP:" + HP);
             recoveryTimer = recoveryTime;
             if (HP <= 0)
@@ -42,6 +45,6 @@ public class Player : MonoBehaviour
     void OnGUI()
     {
         if(isDead)
-        GUI.Box(new Rect(0, 0, 400F, 600f), "Player Dead");
+        GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "Player Dead");
     }
 }

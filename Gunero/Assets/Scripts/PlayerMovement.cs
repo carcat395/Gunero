@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     Touch touch;
     public float speed = 0.1f;
     public static bool isMoving;
+    public GameObject inputCheck;
 
     // Update is called once per frame
     void Update()
@@ -19,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (touch.phase == TouchPhase.Moved)
+        if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
         {
             transform.position = new Vector3(
                 transform.position.x + touch.deltaPosition.x * speed * Time.deltaTime,
@@ -27,10 +28,20 @@ public class PlayerMovement : MonoBehaviour
                 transform.position.z
                 );
 
+            if (inputCheck.activeSelf)
+            {
+                inputCheck.transform.position = new Vector3 (touch.position.x, touch.position.y, inputCheck.transform.position.z);
+            }
+            else
+            {
+                inputCheck.SetActive(true);
+            }
+
             isMoving = true;
         }
         else
         {
+            inputCheck.SetActive(false);
             isMoving = false;
         }
     }
