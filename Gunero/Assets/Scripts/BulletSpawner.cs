@@ -9,11 +9,13 @@ public class BulletSpawner : MonoBehaviour
     public float maxRotation;
     public int numberOfBullets;
     public bool isRandom;
+    public bool isNotParent;
 
     public float cooldown;
     float timer;
     public float bulletSpeed;
     public Vector2 bulletVelocity;
+    bool shooting;
 
 
     float[] rotations;
@@ -34,12 +36,20 @@ public class BulletSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer <= 0)
+        if (shooting)
         {
-            SpawnBullets();
-            timer = cooldown;
+            if (timer <= 0)
+            {
+                SpawnBullets();
+                timer = cooldown;
+            }
+            timer -= Time.deltaTime;
         }
-        timer -= Time.deltaTime;
+    }
+
+    public void Shoot(bool isShooting)
+    {
+        shooting = isShooting;
     }
 
     // Select a random rotation from min to max for each bullet
@@ -63,7 +73,6 @@ public class BulletSpawner : MonoBehaviour
             var fractionOfDifference = fraction * difference;
             rotations[i] = fractionOfDifference + minRotation; // We add minRotation to undo Difference
         }
-        foreach (var r in rotations) print(r);
         return rotations;
     }
     public GameObject[] SpawnBullets()
@@ -84,6 +93,10 @@ public class BulletSpawner : MonoBehaviour
             b.rotation = rotations[i];
             b.speed = bulletSpeed;
             b.velocity = bulletVelocity;
+            if (isNotParent)
+            {
+                spawnedBullets[i].transform.SetParent(null);
+            }
         }
         return spawnedBullets;
     }

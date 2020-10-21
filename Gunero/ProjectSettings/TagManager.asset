@@ -6,6 +6,9 @@ TagManager:
   tags:
   - ScreenEdge
   - Obstacle
+  - Enemy
+  - Player BUllet
+  - Enemy Bullet
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Enemy
   - 
   - 
   - 
