@@ -9,7 +9,8 @@ public class Bullet : MonoBehaviour
     public float rotation;
     public float lifetime;
     float timer;
-    public bool enemyBullet;
+    public int damage;
+    public bool enemyBullet = false;
 
     // Start is called before the first frame update
     void Start()

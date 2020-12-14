@@ -7,42 +7,51 @@ public class PlayerMovement : MonoBehaviour
     Touch touch;
     public float speed = 0.1f;
     public static bool isMoving;
-    public GameObject inputCheck;
 
-    // Update is called once per frame
+    [SerializeField] Vector2 movementDirection;
+    [SerializeField] float movementSpeed;
+    [SerializeField] Vector2 playerVelocity;
+
+    public Joystick joystick;
+
+    Rigidbody2D m_rigidbody2D;
+
+    private void Start()
+    {
+        m_rigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
-        if(Input.touchCount > 0)
-        {
-            touch = Input.GetTouch(0);
-        }
+        if(!GameManager.gameOver)
+            GetInput();
     }
 
     void FixedUpdate()
     {
-        if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+        if(!GameManager.gameOver)
+            Move();
+    }
+
+    private void GetInput()
+    {
+        movementDirection = new Vector2(joystick.Horizontal, joystick.Vertical);
+        movementSpeed = Mathf.Clamp(movementDirection.magnitude, 0.0f, 1.0f);
+        movementDirection.Normalize();
+
+        if (movementSpeed > 0)
         {
-            transform.position = new Vector3(
-                transform.position.x + touch.deltaPosition.x * speed * Time.deltaTime,
-                transform.position.y + touch.deltaPosition.y * speed * Time.deltaTime,
-                transform.position.z
-                );
-
-            if (inputCheck.activeSelf)
-            {
-                inputCheck.transform.position = new Vector3 (touch.position.x, touch.position.y, inputCheck.transform.position.z);
-            }
-            else
-            {
-                inputCheck.SetActive(true);
-            }
-
             isMoving = true;
         }
         else
         {
-            inputCheck.SetActive(false);
             isMoving = false;
         }
+    }
+
+    private void Move()
+    {
+        m_rigidbody2D.velocity = movementDirection * movementSpeed * speed;
+        playerVelocity = m_rigidbody2D.velocity;
     }
 }

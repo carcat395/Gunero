@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Player BUllet
   - Enemy Bullet
+  - EntryPoint
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 252654323
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2223045671
     locked: 0

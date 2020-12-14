@@ -1,0 +1,1363 @@
+fileFormatVersion: 2
+guid: 40ef055786e7caa42b1bcb90fd530efb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4021657234152126639
+    second: Bullet Rush Tilemap_0
+  - first:
+      213: 7216557637305860863
+    second: Bullet Rush Tilemap_1
+  - first:
+      213: 3927351697952878879
+    second: Bullet Rush Tilemap_2
+  - first:
+      213: -2178607521730372365
+    second: Bullet Rush Tilemap_3
+  - first:
+      213: 3191439834404779005
+    second: Bullet Rush Tilemap_4
+  - first:
+      213: -4466520672127683941
+    second: Bullet Rush Tilemap_5
+  - first:
+      213: -5006469980058571075
+    second: Bullet Rush Tilemap_6
+  - first:
+      213: 3675453941823549306
+    second: Bullet Rush Tilemap_7
+  - first:
+      213: -8682980729335902899
+    second: Bullet Rush Tilemap_8
+  - first:
+      213: 5623635764314612410
+    second: Bullet Rush Tilemap_9
+  - first:
+      213: 2325999544581039773
+    second: Bullet Rush Tilemap_10
+  - first:
+      213: 6571220401498316619
+    second: Bullet Rush Tilemap_11
+  - first:
+      213: 4447235881683933628
+    second: Bullet Rush Tilemap_12
+  - first:
+      213: 6570986008462619391
+    second: Bullet Rush Tilemap_13
+  - first:
+      213: -7184246952013818210
+    second: Bullet Rush Tilemap_14
+  - first:
+      213: -2792269324332375495
+    second: Bullet Rush Tilemap_15
+  - first:
+      213: 1186719246753311731
+    second: Bullet Rush Tilemap_16
+  - first:
+      213: -862141192017540121
+    second: Bullet Rush Tilemap_17
+  - first:
+      213: -8640612448961075487
+    second: Bullet Rush Tilemap_18
+  - first:
+      213: -9094460192248001762
+    second: Bullet Rush Tilemap_19
+  - first:
+      213: 841649364785318032
+    second: Bullet Rush Tilemap_20
+  - first:
+      213: -9159560227435381501
+    second: Bullet Rush Tilemap_21
+  - first:
+      213: -618581793587547733
+    second: Bullet Rush Tilemap_22
+  - first:
+      213: 6195661526658984229
+    second: Bullet Rush Tilemap_23
+  - first:
+      213: -5839807896495633518
+    second: Bullet Rush Tilemap_24
+  - first:
+      213: 3580913626958963225
+    second: Bullet Rush Tilemap_25
+  - first:
+      213: 8974902169188181992
+    second: Bullet Rush Tilemap_26
+  - first:
+      213: 8813308358222822656
+    second: Bullet Rush Tilemap_27
+  - first:
+      213: 3155374118990777944
+    second: Bullet Rush Tilemap_28
+  - first:
+      213: 6951919672041262692
+    second: Bullet Rush Tilemap_29
+  - first:
+      213: -4036768493577546384
+    second: Bullet Rush Tilemap_30
+  - first:
+      213: 6822239376832533568
+    second: Bullet Rush Tilemap_31
+  - first:
+      213: -2741042233435684710
+    second: Bullet Rush Tilemap_32
+  - first:
+      213: 4213828947518080660
+    second: Bullet Rush Tilemap_33
+  - first:
+      213: -4496024477744298809
+    second: Bullet Rush Tilemap_34
+  - first:
+      213: 2366458456920524617
+    second: Bullet Rush Tilemap_35
+  - first:
+      213: -7378853935426319228
+    second: Bullet Rush Tilemap_36
+  - first:
+      213: -2504160611445735563
+    second: Bullet Rush Tilemap_37
+  - first:
+      213: 3963358059945783715
+    second: Bullet Rush Tilemap_38
+  - first:
+      213: 2349674687782365021
+    second: Bullet Rush Tilemap_39
+  - first:
+      213: -5603002772622006935
+    second: Bullet Rush Tilemap_40
+  - first:
+      213: -7426064176456070452
+    second: Bullet Rush Tilemap_41
+  - first:
+      213: -4733956547733905516
+    second: Bullet Rush Tilemap_42
+  - first:
+      213: -1884640261536725642
+    second: Bullet Rush Tilemap_43
+  - first:
+      213: 8668401153669658930
+    second: Bullet Rush Tilemap_44
+  - first:
+      213: -7330831703717775572
+    second: Bullet Rush Tilemap_45
+  - first:
+      213: 4749065886892261096
+    second: Bullet Rush Tilemap_46
+  - first:
+      213: -2588155085463829541
+    second: Bullet Rush Tilemap_47
+  - first:
+      213: 1503810873481613151
+    second: Bullet Rush Tilemap_48
+  - first:
+      213: -6359177475302662158
+    second: Bullet Rush Tilemap_49
+  - first:
+      213: -248347988560663422
+    second: Bullet Rush Tilemap_50
+  - first:
+      213: 1959678926102054196
+    second: Bullet Rush Tilemap_51
+  - first:
+      213: -9218391189115596013
+    second: Bullet Rush Tilemap_52
+  - first:
+      213: 5332828660591565476
+    second: Bullet Rush Tilemap_53
+  - first:
+      213: -5288533208561472839
+    second: Bullet Rush Tilemap_54
+  - first:
+      213: -3232576723153355822
+    second: Bullet Rush Tilemap_55
+  - first:
+      213: -676968695476624062
+    second: Bullet Rush Tilemap_56
+  - first:
+      213: -7468674644014675558
+    second: Bullet Rush Tilemap_57
+  - first:
+      213: -1962993634367824327
+    second: Bullet Rush Tilemap_58
+  - first:
+      213: -1213589267565919581
+    second: Bullet Rush Tilemap_59
+  - first:
+      213: 3922803214797583208
+    second: Bullet Rush Tilemap_60
+  - first:
+      213: 1961276395663804917
+    second: Bullet Rush Tilemap_61
+  - first:
+      213: -6864240088742557160
+    second: Bullet Rush Tilemap_62
+  - first:
+      213: 844074428858829993
+    second: Bullet Rush Tilemap_63
+  - first:
+      213: -7178915250691866146
+    second: Bullet Rush Tilemap_64
+  - first:
+      213: -1640653451781134864
+    second: Bullet Rush Tilemap_65
+  - first:
+      213: 1606129627607739246
+    second: Bullet Rush Tilemap_66
+  - first:
+      213: -923690503981036311
+    second: Bullet Rush Tilemap_67
+  - first:
+      213: -5650473719788269845
+    second: Bullet Rush Tilemap_68
+  - first:
+      213: 5584531701416606244
+    second: Bullet Rush Tilemap_69
+  - first:
+      213: -5096602386288424035
+    second: Bullet Rush Tilemap_70
+  - first:
+      213: -6398234191977334651
+    second: Bullet Rush Tilemap_71
+  - first:
+      213: 500133250738866707
+    second: Bullet Rush Tilemap_72
+  - first:
+      213: -6438196395569264824
+    second: Bullet Rush Tilemap_73
+  - first:
+      213: 3498067188195655209
+    second: Bullet Rush Tilemap_74
+  - first:
+      213: -4298414424613694244
+    second: Bullet Rush Tilemap_75
+  - first:
+      213: -6008507672167770558
+    second: Bullet Rush Tilemap_76
+  - first:
+      213: -6339870709677606299
+    second: Bullet Rush Tilemap_77
+  - first:
+      213: 5886323591793604579
+    second: Bullet Rush Tilemap_78
+  - first:
+      213: 3740509925847116740
+    second: Bullet Rush Tilemap_79
+  - first:
+      213: 7340966244855459259
+    second: Bullet Rush Tilemap_80
+  - first:
+      213: -2628838946352467655
+    second: Bullet Rush Tilemap_81
+  - first:
+      213: -6053147705687348272
+    second: Bullet Rush Tilemap_82
+  - first:
+      213: 8882144168579949265
+    second: Bullet Rush Tilemap_83
+  - first:
+      213: -3032505571041788219
+    second: Bullet Rush Tilemap_84
+  - first:
+      213: 3871520317578773298
+    second: Bullet Rush Tilemap_85
+  - first:
+      213: -1229084834637308564
+    second: Bullet Rush Tilemap_86
+  - first:
+      213: -315611761135452917
+    second: Bullet Rush Tilemap_87
+  - first:
+      213: -28462266199042152
+    second: Bullet Rush Tilemap_88
+  - first:
+      213: -3173165411104716502
+    second: Bullet Rush Tilemap_89
+  - first:
+      213: 1356161164569900736
+    second: Bullet Rush Tilemap_90
+  - first:
+      213: -6319524547452055602
+    second: Bullet Rush Tilemap_91
+  - first:
+      213: -8722342721605437397
+    second: Bullet Rush Tilemap_92
+  - first:
+      213: -4628764086858673369
+    second: Bullet Rush Tilemap_93
+  - first:
+      213: -2182785370181498979
+    second: Bullet Rush Tilemap_94
+  - first:
+      213: -4680152968812465662
+    second: Bullet Rush Tilemap_95
+  - first:
+      213: -5090717205736154771
+    second: Bullet Rush Tilemap_96
+  - first:
+      213: 3291431383794012099
+    second: Bullet Rush Tilemap_97
+  - first:
+      213: 786490935549511879
+    second: Bullet Rush Tilemap_98
+  - first:
+      213: -3543945208344421931
+    second: Bullet Rush Tilemap_99
+  - first:
+      213: -1936488570021418173
+    second: Bullet Rush Tilemap_100
+  - first:
+      213: 5970514369560633283
+    second: Bullet Rush Tilemap_101
+  - first:
+      213: -6547510534110874009
+    second: Bullet Rush Tilemap_102
+  - first:
+      213: -6226627151758492669
+    second: Bullet Rush Tilemap_103
+  - first:
+      213: -1786421940233790859
+    second: Bullet Rush Tilemap_104
+  - first:
+      213: -4125589256657550325
+    second: Bullet Rush Tilemap_105
+  - first:
+      213: -2297001004102304494
+    second: Bullet Rush Tilemap_106
+  - first:
+      213: 2731341614827497198
+    second: Bullet Rush Tilemap_107
+  - first:
+      213: -5995716581652392252
+    second: Bullet Rush Tilemap_108
+  - first:
+      213: -3904006349673192583
+    second: Bullet Rush Tilemap_109
+  - first:
+      213: 5694108581099942374
+    second: Bullet Rush Tilemap_110
+  - first:
+      213: 294748804131621934
+    second: Bullet Rush Tilemap_111
+  - first:
+      213: -3178675120181236066
+    second: Bullet Rush Tilemap_112
+  - first:
+      213: -5947124486595096166
+    second: Bullet Rush Tilemap_113
+  - first:
+      213: -7949769580284482250
+    second: Bullet Rush Tilemap_114
+  - first:
+      213: 7581926562081666433
+    second: Bullet Rush Tilemap_115
+  - first:
+      213: -9077368624769558364
+    second: Bullet Rush Tilemap_116
+  - first:
+      213: 2273231359994491977
+    second: Bullet Rush Tilemap_117
+  - first:
+      213: -8546860696078965252
+    second: Bullet Rush Tilemap_118
+  - first:
+      213: -368291718499591937
+    second: Bullet Rush Tilemap_119
+  - first:
+      213: 2538579948184693354
+    second: Bullet Rush Tilemap_120
+  - first:
+      213: -6628005410598099871
+    second: Bullet Rush Tilemap_121
+  - first:
+      213: -8618709073180680332
+    second: Bullet Rush Tilemap_122
+  - first:
+      213: -6220242748039157433
+    second: Bullet Rush Tilemap_123
+  - first:
+      213: -5428833030084894940
+    second: Bullet Rush Tilemap_124
+  - first:
+      213: -4867235299305942517
+    second: Bullet Rush Tilemap_125
+  - first:
+      213: -6391762138661608085
+    second: Bullet Rush Tilemap_126
+  - first:
+      213: -6364847139176864700
+    second: Bullet Rush Tilemap_127
+  - first:
+      213: 3870132431180964410
+    second: Bullet Rush Tilemap_128
+  - first:
+      213: 8879325905124153434
+    second: Bullet Rush Tilemap_129
+  - first:
+      213: -2986365046623932486
+    second: Bullet Rush Tilemap_130
+  - first:
+      213: 1556461455904021006
+    second: Bullet Rush Tilemap_131
+  - first:
+      213: 3889062354209300270
+    second: Bullet Rush Tilemap_132
+  - first:
+      213: -3286318886062171909
+    second: Bullet Rush Tilemap_133
+  - first:
+      213: -1328045792618967375
+    second: Bullet Rush Tilemap_134
+  - first:
+      213: -2746567707355345960
+    second: Bullet Rush Tilemap_135
+  - first:
+      213: -4223405883479381225
+    second: Bullet Rush Tilemap_136
+  - first:
+      213: -5473176828570652659
+    second: Bullet Rush Tilemap_137
+  - first:
+      213: 8427031374154456287
+    second: Bullet Rush Tilemap_138
+  - first:
+      213: 788497780847922855
+    second: Bullet Rush Tilemap_139
+  - first:
+      213: -2713647149541478256
+    second: Bullet Rush Tilemap_140
+  - first:
+      213: -7716425026355593578
+    second: Bullet Rush Tilemap_141
+  - first:
+      213: -7123128862722192557
+    second: Bullet Rush Tilemap_142
+  - first:
+      213: 55174788769715588
+    second: Bullet Rush Tilemap_143
+  - first:
+      213: 1916947822343246667
+    second: Bullet Rush Tilemap_144
+  - first:
+      213: -3932081863579133760
+    second: Bullet Rush Tilemap_145
+  - first:
+      213: -4873983693191532376
+    second: Bullet Rush Tilemap_146
+  - first:
+      213: 6807448883365345624
+    second: Bullet Rush Tilemap_147
+  - first:
+      213: -348356748842348035
+    second: Bullet Rush Tilemap_148
+  - first:
+      213: -3472113203415679780
+    second: Bullet Rush Tilemap_149
+  - first:
+      213: 8695127011425241458
+    second: Bullet Rush Tilemap_150
+  - first:
+      213: -5881834098265025162
+    second: Bullet Rush Tilemap_151
+  - first:
+      213: -1689300157025583571
+    second: Bullet Rush Tilemap_152
+  - first:
+      213: 1058283850756946847
+    second: Bullet Rush Tilemap_153
+  - first:
+      213: -7786171561357894275
+    second: Bullet Rush Tilemap_154
+  - first:
+      213: -4292493089827591246
+    second: Bullet Rush Tilemap_155
+  - first:
+      213: -3160757142191300910
+    second: Bullet Rush Tilemap_0
+  - first:
+      213: 8245851270629665213
+    second: Bullet Rush Tilemap_1
+  - first:
+      213: 5313208592752981873
+    second: Bullet Rush Tilemap_2
+  - first:
+      213: -1424193760891638142
+    second: Bullet Rush Tilemap_3
+  - first:
+      213: 4604578523764651177
+    second: Bullet Rush Tilemap_4
+  - first:
+      213: -8362899819671854576
+    second: Bullet Rush Tilemap_5
+  - first:
+      213: -4687985781973656739
+    second: Bullet Rush Tilemap_6
+  - first:
+      213: 2741596539550353790
+    second: Bullet Rush Tilemap_7
+  - first:
+      213: -8721626781143716387
+    second: Bullet Rush Tilemap_8
+  - first:
+      213: 2386860787772962924
+    second: Bullet Rush Tilemap_9
+  - first:
+      213: -5336816999167514258
+    second: Bullet Rush Tilemap_10
+  - first:
+      213: 953671958825146369
+    second: Bullet Rush Tilemap_11
+  - first:
+      213: 6390528900974158631
+    second: Bullet Rush Tilemap_12
+  - first:
+      213: -7498314663170731469
+    second: Bullet Rush Tilemap_13
+  - first:
+      213: -8274626583185178631
+    second: Bullet Rush Tilemap_14
+  - first:
+      213: -598189907872660910
+    second: Bullet Rush Tilemap_15
+  - first:
+      213: 4013169577857340505
+    second: Bullet Rush Tilemap_16
+  - first:
+      213: -8711789863869044046
+    second: Bullet Rush Tilemap_17
+  - first:
+      213: -1659865998777381005
+    second: Bullet Rush Tilemap_18
+  - first:
+      213: -7182542559652846456
+    second: Bullet Rush Tilemap_19
+  - first:
+      213: 3453917114285292142
+    second: Bullet Rush Tilemap_20
+  - first:
+      213: -3666806850978470997
+    second: Bullet Rush Tilemap_21
+  - first:
+      213: 3447817200631060273
+    second: Bullet Rush Tilemap_22
+  - first:
+      213: 7915450785675092633
+    second: Bullet Rush Tilemap_23
+  - first:
+      213: -6688127655583446995
+    second: Bullet Rush Tilemap_24
+  - first:
+      213: -7325113894668292507
+    second: Bullet Rush Tilemap_25
+  - first:
+      213: 8537624473675301162
+    second: Bullet Rush Tilemap_26
+  - first:
+      213: 7399470189871160735
+    second: Bullet Rush Tilemap_27
+  - first:
+      213: -3296436878014844679
+    second: Bullet Rush Tilemap_28
+  - first:
+      213: -2853735690375346093
+    second: Bullet Rush Tilemap_29
+  - first:
+      213: -3835539859917071266
+    second: Bullet Rush Tilemap_30
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 223
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de9866202cb224d0800000000000000
+      internalID: -3160757142191300910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 223
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9a590da062f6270800000000000000
+      internalID: 8245851270629665213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 223
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1773894801f4cb940800000000000000
+      internalID: 5313208592752981873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_3
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 224
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ee9b6f15f3c3ce0800000000000000
+      internalID: -1424193760891638142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_4
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 223
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4726175cfb6ef30800000000000000
+      internalID: 4604578523764651177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_5
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 223
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012e74c2ce201fb80800000000000000
+      internalID: -8362899819671854576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 185
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5bd061f4cde0feb0800000000000000
+      internalID: -4687985781973656739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_7
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 185
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79c651f68b1c0620800000000000000
+      internalID: 2741596539550353790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_8
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 185
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd2566d6ae86f680800000000000000
+      internalID: -8721626781143716387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_9
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 185
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6834878d35df1120800000000000000
+      internalID: 2386860787772962924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_10
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 185
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69aa550731dfe5b0800000000000000
+      internalID: -5336816999167514258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_11
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 185
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1081602089f1c3d00800000000000000
+      internalID: 953671958825146369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 147
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 723ae6d4d28bfa850800000000000000
+      internalID: 6390528900974158631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_13
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 147
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3321b97aa82a0f790800000000000000
+      internalID: -7498314663170731469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_14
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 147
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff3e34a6fe9a2d80800000000000000
+      internalID: -8274626583185178631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_15
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 147
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252c609b27dc2b7f0800000000000000
+      internalID: -598189907872660910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_16
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 147
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9545797e774a1b730800000000000000
+      internalID: 4013169577857340505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_17
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 147
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2baac3e9641891780800000000000000
+      internalID: -8711789863869044046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 109
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f00202ba8f6f8e0800000000000000
+      internalID: -1659865998777381005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_19
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 109
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88464c3c89b725c90800000000000000
+      internalID: -7182542559652846456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_20
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 109
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6afd98d057ceef20800000000000000
+      internalID: 3453917114285292142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_21
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 109
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba3a57bb892ec1dc0800000000000000
+      internalID: -3666806850978470997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_22
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 109
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13798160a7b19df20800000000000000
+      internalID: 3447817200631060273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_23
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 109
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 992204d3d8459dd60800000000000000
+      internalID: 7915450785675092633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_24
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 74
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d288b7c155ffe23a0800000000000000
+      internalID: -6688127655583446995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_25
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 74
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ea40119b7f75a90800000000000000
+      internalID: -7325113894668292507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_26
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 74
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21091b793cbb7670800000000000000
+      internalID: 8537624473675301162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_27
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 71
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ddc510fe230b660800000000000000
+      internalID: 7399470189871160735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_28
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 40
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f07d6def14b042d0800000000000000
+      internalID: -3296436878014844679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_29
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 40
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358c254628e7568d0800000000000000
+      internalID: -2853735690375346093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_30
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 5
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c9ac7a1dc65cac0800000000000000
+      internalID: -3835539859917071266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Rush Tilemap_31
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 5
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04419c441967dae50800000000000000
+      internalID: 6822239376832533568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

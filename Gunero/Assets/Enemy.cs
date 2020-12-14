@@ -5,23 +5,28 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Range(0, .3f)] [SerializeField] public float m_movementSmoothing = .05f;
+
+    public string enemyID;
+
     public int maxHP;
-    int HP;
+    public int HP;
     Vector3 m_velocity = Vector3.zero;
     public int movementSpeed;
     public float moveTimer;
-    float timer;
     Vector3 targetPosition;
+    public int enemyWorth;
+
     public bool isMoving;
-    Rigidbody2D m_rigidbody2D;
-    BulletSpawner bulletspawner;
     bool isShooting = true;
     Vector3 currPos;
     Vector3 lastPos;
     bool isDead;
-    public HealthBar healthbar;
+    float timer;
 
-    // Start is called before the first frame update
+    Rigidbody2D m_rigidbody2D;
+    BulletSpawner bulletspawner;
+    public HealthBar healthbar;
+    
     void Awake()
     {
         m_rigidbody2D = GetComponent<Rigidbody2D>();
@@ -32,11 +37,17 @@ public class Enemy : MonoBehaviour
         healthbar.SetMaxHealth(maxHP);
     }
 
+    private void OnEnable()
+    {
+        healthbar.SetMaxHealth(maxHP);
+        HP = maxHP;
+    }
+
     private void Start()
     {
         getTarget();
     }
-    // Update is called once per frame
+
     private void Update()
     {
        currPos = transform.position;
@@ -46,13 +57,12 @@ public class Enemy : MonoBehaviour
             {
                 getTarget();
                 isMoving = true;
-                bulletspawner.Shoot(isShooting = false);
+                bulletspawner.Shoot(isShooting = true);
                 Move(targetPosition, movementSpeed);
             }
             else if (currPos != lastPos)
             {
                 Move(targetPosition, movementSpeed);
-                 
             }
             else
             {
@@ -80,25 +90,25 @@ public class Enemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, targetPos, Speed * Time.deltaTime);
     }
 
+    private void TakeDamage(int damage)
+    {
+        HP -= damage;
+        healthbar.SetHealth(HP);
+        if (HP <= 0)
+        {
+            GetComponentInParent<Room>().DecreaseEnemyCount();
+            Debug.Log("Gained :" + enemyWorth + "parts");
+            GameManager.AddToParts(enemyWorth);
+            gameObject.SetActive(false);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player BUllet")
         {
-            HP -= 5;
-            healthbar.SetHealth(HP);
-            Debug.Log("Enemy HP:" + HP);
-            if (HP <= 0)
-            {
-                Debug.Log("Enemy Dead");
-                isDead = true;
-                Time.timeScale = 0f;
-            }
+            int damageTaken = collision.GetComponent<Bullet>().damage;
+            TakeDamage(damageTaken);
         }
-    }
-
-    void OnGUI()
-    {
-        if (isDead)
-            GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "Enemy Dead");
     }
 }

@@ -10,11 +10,17 @@ public class Player : MonoBehaviour
     public float recoveryTime;
     float recoveryTimer;
     bool isDead;
+
+    [Space]
     public HealthBar healthbar;
+    public GameObject gameManager;
+
+    GameManager gm;
 
     // Start is called before the first frame update
     void Awake()
     {
+        gm = gameManager.GetComponent<GameManager>();
         HP = MaxHP;
         healthbar.SetMaxHealth(MaxHP);
     }
@@ -31,20 +37,12 @@ public class Player : MonoBehaviour
         {
             HP -= 5;
             healthbar.SetHealth(HP);
-            Debug.Log("Player HP:" + HP);
             recoveryTimer = recoveryTime;
             if (HP <= 0)
             {
-                Debug.Log("Player ded");
                 isDead = true;
-                Time.timeScale = 0f;
+                gm.SetGameOver();
             }
         }
-    }
-
-    void OnGUI()
-    {
-        if(isDead)
-        GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "Player Dead");
     }
 }

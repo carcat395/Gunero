@@ -22,12 +22,8 @@ public class BulletSpawner : MonoBehaviour
     {
         timer = GetSpawnData().cooldown;
         rotations = new float[GetSpawnData().numberOfBullets];
-        if (!GetSpawnData().isRandom)
+        if(!GetSpawnData().isRandom)
         {
-            /* 
-             * This doesn't need to be in update because the rotations will be the same no matter what
-             * Unless if we change min Rotation and max Rotation Variables leave this in Start.
-             */
             DistributedRotations();
         }
     }
@@ -49,7 +45,7 @@ public class BulletSpawner : MonoBehaviour
                     }
                     else
                     {
-                        index += 1;
+                        index++;
                         if (index >= spawnDatas.Length) index = 0;
                     }
                     rotations = new float[GetSpawnData().numberOfBullets];
@@ -87,13 +83,17 @@ public class BulletSpawner : MonoBehaviour
         }
         return rotations;
     }
+
     public GameObject[] SpawnBullets()
     {
         rotations = new float[GetSpawnData().numberOfBullets];
         if (GetSpawnData().isRandom)
         {
-            // This is in Update because we want a random rotation for each bullet each time
             RandomRotations();
+        }
+        else
+        {
+            DistributedRotations();
         }
 
         // Spawn Bullets
@@ -101,9 +101,10 @@ public class BulletSpawner : MonoBehaviour
         for (int i = 0; i < GetSpawnData().numberOfBullets; i++)
         {
             spawnedBullets[i] = BulletManager.GetBulletFromPool();
-            if (spawnedBullets[i] = null)
+            if (spawnedBullets[i] == null)
             {
                 spawnedBullets[i] = Instantiate(GetSpawnData().bulletResource, transform);
+                BulletManager.bullets.Add(spawnedBullets[i]);
             }
             else
             {
@@ -111,7 +112,6 @@ public class BulletSpawner : MonoBehaviour
                 spawnedBullets[i].transform.localPosition = Vector2.zero;
             }
             
-
             var b = spawnedBullets[i].GetComponent<Bullet>();
             b.rotation = rotations[i];
             b.speed = GetSpawnData().bulletSpeed;

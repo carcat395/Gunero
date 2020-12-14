@@ -47,8 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 1, y: 0}
-  speed: 5
-  rotation: 360
+  speed: 6
+  rotation: 0
+  lifetime: 5
+  damage: 5
   enemyBullet: 1
 --- !u!212 &3071407814769789070
 SpriteRenderer:
