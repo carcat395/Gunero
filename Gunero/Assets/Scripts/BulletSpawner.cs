@@ -6,6 +6,7 @@ public class BulletSpawner : MonoBehaviour
 {
     public BulletSpawnData[] spawnDatas;
     int index = 0;
+    public bool singleShot;
     public bool isSequenceRandom;
     public bool spawningAutomatically;
     BulletSpawnData GetSpawnData()
@@ -15,6 +16,8 @@ public class BulletSpawner : MonoBehaviour
     
     float timer;
     bool shooting;
+    Transform firingPoint;
+    public bool tracking;
 
 
     float[] rotations;
@@ -55,9 +58,10 @@ public class BulletSpawner : MonoBehaviour
         }
     }
 
-    public void Shoot(bool isShooting)
+    public void Shoot(bool isShooting, Transform firePoint)
     {
         shooting = isShooting;
+        firingPoint = firePoint;
     }
 
     // Select a random rotation from min to max for each bullet
@@ -76,7 +80,15 @@ public class BulletSpawner : MonoBehaviour
     {
         for (int i = 0; i < GetSpawnData().numberOfBullets; i++)
         {
-            var fraction = (float)i / ((float)GetSpawnData().numberOfBullets - 1);
+            float fraction;
+            if (GetSpawnData().numberOfBullets == 1)
+            {
+                fraction = (float)i / (2);
+            }
+            else
+            {
+                fraction = (float)i / ((float)GetSpawnData().numberOfBullets - 1);
+            }
             var difference = GetSpawnData().maxRotation - GetSpawnData().minRotation;
             var fractionOfDifference = fraction * difference;
             rotations[i] = fractionOfDifference + GetSpawnData().minRotation; // We add minRotation to undo Difference
@@ -100,20 +112,25 @@ public class BulletSpawner : MonoBehaviour
         GameObject[] spawnedBullets = new GameObject[GetSpawnData().numberOfBullets];
         for (int i = 0; i < GetSpawnData().numberOfBullets; i++)
         {
-            spawnedBullets[i] = BulletManager.GetBulletFromPool();
+            spawnedBullets[i] = BulletManager.GetEnemyBulletFromPool();
             if (spawnedBullets[i] == null)
             {
-                spawnedBullets[i] = Instantiate(GetSpawnData().bulletResource, transform);
-                BulletManager.bullets.Add(spawnedBullets[i]);
+                spawnedBullets[i] = Instantiate(GetSpawnData().bulletResource, firingPoint);
+                BulletManager.enemyBullets.Add(spawnedBullets[i]);
             }
             else
             {
-                spawnedBullets[i].transform.SetParent(transform);
+                spawnedBullets[i].transform.SetParent(firingPoint);
                 spawnedBullets[i].transform.localPosition = Vector2.zero;
             }
             
             var b = spawnedBullets[i].GetComponent<Bullet>();
-            b.rotation = rotations[i];
+            if (tracking)
+            {
+                b.rotation = firingPoint.eulerAngles.z + 90f;
+            }
+            else
+                b.rotation = rotations[i];
             b.speed = GetSpawnData().bulletSpeed;
             b.velocity = GetSpawnData().bulletVelocity;
             if (GetSpawnData().isNotParent)

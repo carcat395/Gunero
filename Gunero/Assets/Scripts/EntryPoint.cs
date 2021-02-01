@@ -16,6 +16,8 @@ public class EntryPoint : MonoBehaviour
         if(collision.tag == "Player")
         {
             parentRoom.ActivateRoom();
+            parentRoom.AssignTarget(collision.transform);
+
             gameObject.SetActive(false);
         }
     }

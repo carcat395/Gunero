@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public int[] weaponProgress = new int[3];
     public int levelIndex = 0;
     public int totalParts = 0;
-    public int score = 0;
+    public int[] score = new int[5];
     private static int machineParts;
+    public int weaponIndex = 0;
     public static bool gameOver;
-    public int playerWeapon = 0;
-    [SerializeField] bool mainMenu;
+    [SerializeField] bool menu;
 
     [Space]
     public GameObject uiCanvas;
+    public GameObject audioManager;
     UIManager uiManager;
 
     private void Start()
     {
-        if (!mainMenu)
+        if (!menu)
         {
             GameData gd = SaveSystem.LoadGame();
             totalParts = gd.currMoney;
+            weaponProgress = gd.weaponProgress;
             if (Time.timeScale == 0)
             {
                 gameOver = false;
@@ -29,15 +32,19 @@ public class GameManager : MonoBehaviour
             }
             uiManager = uiCanvas.GetComponent<UIManager>();
         }
+
+        weaponIndex = WeaponSelectUI.GetSelectedGun();
     }
 
     public void SetGameOver()
     {
+        audioManager.GetComponent<AudioManager>().Stop("BGM");
         Time.timeScale = 0;
         gameOver = true;
 
-        score += 100;
-        BulletManager.bullets.Clear();
+        //score[levelIndex] += 100;
+        BulletManager.enemyBullets.Clear();
+        BulletManager.playerBullets.Clear();
         RoomManager.enemies.Clear();
 
         uiManager.ActivateGameOverUI();

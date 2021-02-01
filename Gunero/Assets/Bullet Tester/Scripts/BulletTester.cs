@@ -53,10 +53,20 @@ public class BulletTester : MonoBehaviour
     {
         for (int i = 0; i < numberOfBullets; i++)
         {
-            var fraction = (float)i / ((float)numberOfBullets - 1);
+            float fraction = 1;
+            if (numberOfBullets == 1)
+            {
+                fraction = (float)i / ((float)2);
+            }
+            else
+            {
+                fraction = (float)i / ((float)numberOfBullets - 1);
+            }
             var difference = maxRotation - minRotation;
             var fractionOfDifference = fraction * difference;
             rotations[i] = fractionOfDifference + minRotation;
+
+            Debug.Log("angle " + rotations[i]);
         }
         foreach (var r in rotations) print(r);
         return rotations;
@@ -98,11 +108,6 @@ public class BulletTester : MonoBehaviour
             DestroyImmediate(b);
         }
         testSpawned = 0;
-    }
-
-    public void CreateScriptableObject()
-    {
-        
     }
 
     private void OnDrawGizmosSelected()

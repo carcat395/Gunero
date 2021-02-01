@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7227190566292014536}
-  - component: {fileID: 9217564700518692926}
+  - component: {fileID: 6650426005806436259}
   m_Layer: 0
   m_Name: BulletTester
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9217564700518692926
+--- !u!114 &6650426005806436259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,11 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3447b4db540608541bc8db350076b025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletResource: {fileID: 0}
-  minRotation: 0
-  maxRotation: 0
-  numberOfBullets: 0
+  bulletResource: {fileID: 3071407814769789065, guid: 61093a200139caf4a885a896154c7d84, type: 3}
+  minRotation: 225
+  maxRotation: 315
+  numberOfBullets: 2
   isRandom: 0
-  cooldown: 0
-  bulletSpeed: 0
-  bulletVelocity: {x: 0, y: 0}
+  isNotParent: 1
+  cooldown: 1
+  bulletSpeed: 2
+  bulletVelocity: {x: 1, y: 0}
+  bulletName: 

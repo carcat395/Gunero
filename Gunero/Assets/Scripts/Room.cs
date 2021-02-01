@@ -5,6 +5,7 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     public int roomNo;
+    int wavesLeft;
     public int enemiesLeft;
     private bool roomCleared = false;
     public bool finalRoom;
@@ -19,17 +20,35 @@ public class Room : MonoBehaviour
 
     [Space]
     [Header("List Enemy")]
-    public GameObject[] enemiesToSpawn;
-    public Vector2[] spawnPositions;
+    public RoomSpawnData[] spawnDatas;
+    int index = 0;
+
+    RoomSpawnData GetSpawnData()
+    {
+        return spawnDatas[index];
+    }
 
     void Start()
     {
         rm = roomManager.GetComponent<RoomManager>();
         dm = doorManager.GetComponent<DoorManager>();
         gm = gameManager.GetComponent<GameManager>();
+        wavesLeft = spawnDatas.Length;
+        Debug.Log("waves left: " + spawnDatas.Length);
 
     }
     
+    public void AssignTarget(Transform target)
+    {
+        foreach(Transform child in transform)
+        {
+            if(child.tag == "Enemy")
+            {
+                child.GetComponent<EnemyAI>().target = target;
+            }
+        }
+    }
+
     public void DecreaseEnemyCount()
     {
         enemiesLeft--;
@@ -41,7 +60,6 @@ public class Room : MonoBehaviour
             }
             else
             {
-                dm.OpenAllDoors();
                 ClearRoom();
             }
         }
@@ -50,8 +68,8 @@ public class Room : MonoBehaviour
     public void ActivateRoom()
     {
         if (!roomCleared)
-        {
-            foreach (Transform child in transform)
+        {//activate enemy as first wave
+         /*   foreach (Transform child in transform)
             {
                 if (child.tag == "Enemy")
                 {
@@ -60,15 +78,27 @@ public class Room : MonoBehaviour
                     RoomManager.enemies.Add(child.gameObject);
                 }
             }
-
+            */
+            Debug.Log("Spawn: " + GetSpawnData().name);
             rm.SetCurrRoom(roomNo);
             rm.SpawnEnemies(roomNo);
             dm.CloseAllDoors();
+            wavesLeft--;
         }
         else
         {
             return;
         }
+    }
+
+    public List<GameObject> GetEnemiesToSpawn()
+    {
+        return GetSpawnData().enemiesToSpawn;
+    }
+
+    public List<Vector2> GetSpawnPositions()
+    {
+        return GetSpawnData().spawnPositions;
     }
 
     public void ClearRoom()
@@ -79,6 +109,15 @@ public class Room : MonoBehaviour
                 child.SetParent(null);
         }
 
-        roomCleared = true;
+        if (wavesLeft > 0)
+        {
+            index++;
+            ActivateRoom();
+        }
+        else
+        {
+            dm.OpenAllDoors();
+            roomCleared = true;
+        }
     }
 }

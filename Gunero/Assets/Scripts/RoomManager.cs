@@ -20,19 +20,22 @@ public class RoomManager : MonoBehaviour
     {
         GameObject targetRoom = rooms[roomNo];
         Room room = targetRoom.GetComponent<Room>();
-        for(int i = 0; i < room.enemiesToSpawn.Length; i++)
+        List<GameObject> enemiesToSpawn = room.GetEnemiesToSpawn();
+        List<Vector2> spawnPositions = room.GetSpawnPositions();
+        
+        for(int i = 0; i < enemiesToSpawn.Count; i++)
         {
-            GameObject spawnedEnemy = GetEnemiesFromPool(room.enemiesToSpawn[i].GetComponent<Enemy>().enemyID);
+            GameObject spawnedEnemy = GetEnemiesFromPool(enemiesToSpawn[i].GetComponent<Enemy>().enemyID);
             if ( spawnedEnemy == null)
             {
-                spawnedEnemy = Instantiate(room.enemiesToSpawn[i], room.spawnPositions[i], Quaternion.identity, targetRoom.transform);
+                spawnedEnemy = Instantiate(enemiesToSpawn[i], spawnPositions[i], Quaternion.identity, targetRoom.transform);
                 enemies.Add(spawnedEnemy);
                 room.enemiesLeft++;
             }
             else
             {
                 spawnedEnemy.transform.SetParent(targetRoom.transform);
-                spawnedEnemy.transform.position = room.spawnPositions[i];
+                spawnedEnemy.transform.position = spawnPositions[i];
                 room.enemiesLeft++;
             }
         }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92f32e1c06119d4c94ff0c5bd656b04, type: 3}
+  m_Name: DefaultGun
+  m_EditorClassIdentifier: 
+  bulletResource: {fileID: 5552853255103791642, guid: 26e49cfab24e1104f997c4e089d451d2, type: 3}
+  upgradeSprites:
+  - {fileID: 939997458846612562, guid: 2af88c0e32206214ea67296fbb9d4b9d, type: 3}
+  - {fileID: -3369154337016089237, guid: 2af88c0e32206214ea67296fbb9d4b9d, type: 3}
+  - {fileID: 8409350454167013563, guid: 2af88c0e32206214ea67296fbb9d4b9d, type: 3}
+  cooldown: 0.5
+  buletSpeed: 5

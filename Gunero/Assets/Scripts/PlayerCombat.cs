@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public GameObject BulletResource;
-    //public GameObject AttackRange;
+    enum Gun {Default, AOE, Poison};
 
+    public GameObject[] BulletResource;
+    int gunIndex;
+
+    [Space]
     public float cooldown;
     float timer;
+    public int numberOfBullets;
     public float bulletSpeed;
     public Vector2 bulletVelocity;
     public int rangeScale;
@@ -18,20 +22,61 @@ public class PlayerCombat : MonoBehaviour
     bool enemyOnSight;
     Vector2 defaultUp;
 
+    [Space]
+    public GunData[] gunDatas; 
+    GunData GetGunData(int index)
+    {
+        return gunDatas[index];
+    }
+
+    SpriteRenderer gunRenderer;
+    Animator anim;
     Vector2 currPoint;
     Vector2 rangeSize;
     Rigidbody2D m_rigidbody2D;
     Vector3 currPos;
     Vector3 lastPos;
+    Transform gun;
+    Transform firingPoint;
+    Gun currgun;
 
     // Start is called before the first frame update
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         timer = cooldown;
         defaultUp = transform.up;
         m_rigidbody2D = GetComponent<Rigidbody2D>();
+        gun = transform.Find("Gun");
+        gunRenderer = gun.GetComponent<SpriteRenderer>();
+        firingPoint = gun.Find("Fire Point");
     }
-    
+
+    public void SetWeapon(int weaponIndex, int upgradeProgress)
+    {
+        switch (weaponIndex)
+        {
+            case 0:
+                gunIndex = weaponIndex;
+                currgun = Gun.Default;
+                gunRenderer.sprite = GetGunData(weaponIndex).upgradeSprites[upgradeProgress];
+                cooldown = GetGunData(weaponIndex).cooldown;
+                break;
+            case 1:
+                gunIndex = weaponIndex;
+                currgun = Gun.AOE;
+                gunRenderer.sprite = GetGunData(weaponIndex).upgradeSprites[upgradeProgress];
+                cooldown = GetGunData(weaponIndex).cooldown;
+                break;
+            case 2:
+                gunIndex = weaponIndex;
+                currgun = Gun.Poison;
+                gunRenderer.sprite = GetGunData(weaponIndex).upgradeSprites[upgradeProgress];
+                cooldown = GetGunData(weaponIndex).cooldown;
+                break;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -41,14 +86,14 @@ public class PlayerCombat : MonoBehaviour
             autoAim();
             if (enemyOnSight)
             {
-                transform.up = nearestEnemy.position - transform.position;
+                gun.right = nearestEnemy.position - transform.position;
             }
             else
             {
-                transform.up = defaultUp;
+                gun.right = defaultUp;
             }
 
-            if (timer <= 0)
+            if (timer <= 0 && enemyOnSight)
             {
                 SpawnBullet();
                 timer = cooldown;
@@ -57,24 +102,47 @@ public class PlayerCombat : MonoBehaviour
         }
         else
         {
-            transform.up = defaultUp;
+            gun.up = defaultUp;
         }
         lastPos = currPos;
     }
 
-    public GameObject SpawnBullet()
+    public GameObject[] SpawnBullet()
     {
+        GameObject[] spawnedBullets = new GameObject[numberOfBullets];
+        for (int i = 0; i < numberOfBullets; i++)
+        {
+            spawnedBullets[i] = BulletManager.GetPlayerBulletFromPool();
+            if (spawnedBullets[i] == null)
+            {
+                spawnedBullets[i] = Instantiate(GetGunData(gunIndex).bulletResource, gun);
+                BulletManager.playerBullets.Add(spawnedBullets[i]);
+            }
+            else
+            {
+                spawnedBullets[i].transform.SetParent(gun);
+                spawnedBullets[i].transform.localPosition = Vector2.zero;
+            }
+
+            var b = spawnedBullets[i].GetComponent<Bullet>();
+            b.rotation = gun.eulerAngles.z;
+            b.speed = GetGunData(gunIndex).buletSpeed;
+            b.velocity = bulletVelocity;
+            spawnedBullets[i].transform.SetParent(null);
+        }
+        return spawnedBullets;
+        /*
         GameObject spawnedBullet;
-        spawnedBullet = Instantiate(BulletResource, transform);
+        spawnedBullet = Instantiate(GetGunData(gunIndex).bulletResource, gun);
 
         var b = spawnedBullet.GetComponent<Bullet>();
-        b.rotation = 90f + transform.eulerAngles.z;
+        b.rotation = gun.eulerAngles.z;
         b.speed = bulletSpeed;
         b.velocity = bulletVelocity;
         spawnedBullet.transform.SetParent(null);
 
         return spawnedBullet;
-        
+        */
     }
 
     void autoAim()
@@ -93,6 +161,7 @@ public class PlayerCombat : MonoBehaviour
                 nearestEnemy = enemiesInRange[i].transform;
                 shortestDistance = Distance;
                 enemyOnSight = true;
+                anim.SetBool("isShooting", true);
             }
             else if (Distance < shortestDistance)
             {
@@ -100,9 +169,11 @@ public class PlayerCombat : MonoBehaviour
                 shortestDistance = Distance;
             }
         }
-        if(enemiesInRange == null)
+
+        if(enemiesInRange.Length == 0)
         {
             enemyOnSight = false;
+            anim.SetBool("isShooting", false);
         }
     }
 

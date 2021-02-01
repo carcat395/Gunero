@@ -1,0 +1,328 @@
+fileFormatVersion: 2
+guid: 2af88c0e32206214ea67296fbb9d4b9d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3369154337016089237
+    second: Default_Weapon_0
+  - first:
+      213: 939997458846612562
+    second: Default_Weapon_1
+  - first:
+      213: 8409350454167013563
+    second: Default_Weapon_2
+  - first:
+      213: 4271800196639004337
+    second: Default_Weapon_3
+  - first:
+      213: -1292358889882325663
+    second: Default_Weapon_4
+  - first:
+      213: 3460949058007000225
+    second: Default_Weapon_5
+  - first:
+      213: 7838574758881526166
+    second: Default_Weapon_6
+  - first:
+      213: -2846956998910972317
+    second: Default_Weapon_7
+  - first:
+      213: -1681479950256495502
+    second: Default_Weapon_8
+  - first:
+      213: 5243470418658887625
+    second: Default_Weapon_9
+  - first:
+      213: 5634596364274350908
+    second: Default_Weapon_10
+  - first:
+      213: -6203898977565570408
+    second: Default_Weapon_11
+  - first:
+      213: -7267947703293951916
+    second: Default_Weapon_12
+  - first:
+      213: 2922563795399336647
+    second: Default_Weapon_13
+  - first:
+      213: -2274638908148748160
+    second: Default_Weapon_14
+  - first:
+      213: 2791998342803485236
+    second: Default_Weapon_15
+  - first:
+      213: 5808960077308437055
+    second: Default_Weapon_16
+  - first:
+      213: -3590793703551149231
+    second: Default_Weapon_17
+  - first:
+      213: 4830632459358973234
+    second: Default_Weapon_18
+  - first:
+      213: -17724646258049024
+    second: Default_Weapon_19
+  - first:
+      213: 3714127484696915074
+    second: Default_Weapon_20
+  - first:
+      213: -7565428651550938519
+    second: Default_Weapon_21
+  - first:
+      213: 4981314480720346328
+    second: Default_Weapon_22
+  - first:
+      213: -5102675168622989251
+    second: Default_Weapon_23
+  - first:
+      213: -5456234926092073223
+    second: Default_Weapon_24
+  - first:
+      213: 210237483278193043
+    second: Default_Weapon_25
+  - first:
+      213: -7771965948408170920
+    second: Default_Weapon_26
+  - first:
+      213: -455350017495645730
+    second: Default_Weapon_27
+  - first:
+      213: 8964849856136342274
+    second: Default_Weapon_28
+  - first:
+      213: 5829840450373410683
+    second: Default_Weapon_29
+  - first:
+      213: 6661424642081473160
+    second: Default_Weapon_30
+  - first:
+      213: 4522286329773687263
+    second: Default_Weapon_31
+  - first:
+      213: 5761951753708867095
+    second: Default_Weapon_32
+  - first:
+      213: 6996620457193517707
+    second: Default_Weapon_33
+  - first:
+      213: -8655985237083672019
+    second: Default_Weapon_34
+  - first:
+      213: 8627623937832090296
+    second: Default_Weapon_35
+  - first:
+      213: 7702828727818682552
+    second: Default_Weapon_36
+  - first:
+      213: 922854142453865020
+    second: Default_Weapon_37
+  - first:
+      213: -288190783125200980
+    second: Default_Weapon_38
+  - first:
+      213: -2870486193688287005
+    second: Default_Weapon_39
+  - first:
+      213: 5249457393099229607
+    second: Default_Weapon_40
+  - first:
+      213: -3795122778446059841
+    second: Default_Weapon_41
+  - first:
+      213: -6649191865772620749
+    second: Default_Weapon_42
+  - first:
+      213: 4467574458875478254
+    second: Default_Weapon_43
+  - first:
+      213: 5678119471452053896
+    second: Default_Weapon_44
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 104
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Default_Weapon_2
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 92
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb80564fea304b470800000000000000
+      internalID: 8409350454167013563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Default_Weapon_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 68
+        width: 92
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6570b42bfb5e31d0800000000000000
+      internalID: -3369154337016089237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Default_Weapon_1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 132
+        width: 92
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c725065ba8b0d00800000000000000
+      internalID: 939997458846612562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

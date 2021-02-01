@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyStatus {Normal, Poisoned}
+
 public class Enemy : MonoBehaviour
 {
     [Range(0, .3f)] [SerializeField] public float m_movementSmoothing = .05f;
 
     public string enemyID;
+    public EnemyStatus status;
 
-    public int maxHP;
-    public int HP;
+    public float maxHP;
+    public float HP;
     Vector3 m_velocity = Vector3.zero;
     public int movementSpeed;
-    public float moveTimer;
     Vector3 targetPosition;
     public int enemyWorth;
 
@@ -20,21 +22,22 @@ public class Enemy : MonoBehaviour
     bool isShooting = true;
     Vector3 currPos;
     Vector3 lastPos;
+    public int rangeScale;
+    Vector2 rangeSize;
     bool isDead;
-    float timer;
 
-    Rigidbody2D m_rigidbody2D;
-    BulletSpawner bulletspawner;
-    public HealthBar healthbar;
+    float poisonDamage;
+    float timer = 0;
     
+    public HealthBar healthbar;
+    public Transform firingPoint;
+    public LayerMask enemyLayers;
+
     void Awake()
     {
-        m_rigidbody2D = GetComponent<Rigidbody2D>();
-        bulletspawner = GetComponent<BulletSpawner>();
-        timer = moveTimer;
-        isMoving = false;
         HP = maxHP;
         healthbar.SetMaxHealth(maxHP);
+        status = EnemyStatus.Normal;
     }
 
     private void OnEnable()
@@ -43,54 +46,19 @@ public class Enemy : MonoBehaviour
         HP = maxHP;
     }
 
-    private void Start()
-    {
-        getTarget();
-    }
-
     private void Update()
     {
-       currPos = transform.position;
-       if (timer <= 0)
+        if(status == EnemyStatus.Poisoned && timer >= 0)
         {
-            if (!isMoving)
-            {
-                getTarget();
-                isMoving = true;
-                bulletspawner.Shoot(isShooting = true);
-                Move(targetPosition, movementSpeed);
-            }
-            else if (currPos != lastPos)
-            {
-                Move(targetPosition, movementSpeed);
-            }
-            else
-            {
-                timer = moveTimer;
-                isMoving = false;
-            }
-
+            StartCoroutine(TakePoisonDamage());
         }
-        else
+        else if(timer == 0)
         {
-            bulletspawner.Shoot(isShooting = true);
-            timer -= Time.deltaTime;
+            status = EnemyStatus.Normal;
         }
-
-        lastPos = currPos;
     }
 
-    void getTarget()
-    {
-        targetPosition = new Vector3(Random.Range(-2.13f, 2.14f), Random.Range(0.78f, 4.69f), transform.position.z);
-    }
-
-    private void Move(Vector2 targetPos, float Speed)
-    {
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, Speed * Time.deltaTime);
-    }
-
-    private void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         HP -= damage;
         healthbar.SetHealth(HP);
@@ -103,12 +71,37 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    IEnumerator TakePoisonDamage()
+    {
+        Debug.Log("HEY, this is a war crime !!!");
+        TakeDamage(poisonDamage);
+        yield return new WaitForSeconds(.5f);
+        timer -= .5f;
+    }
+
+    public void SetPoison(float damageOverTime, float statusTime)
+    {
+        if (status != EnemyStatus.Poisoned)
+        {
+            status = EnemyStatus.Poisoned;
+            poisonDamage = damageOverTime;
+            timer = statusTime;
+        }
+        else
+        {
+            return;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player BUllet")
         {
-            int damageTaken = collision.GetComponent<Bullet>().damage;
-            TakeDamage(damageTaken);
+            Bullet hitBullet = collision.GetComponent<Bullet>();
+            if (hitBullet.bulletType == BulletType.Normal) {
+                int damageTaken = collision.GetComponent<Bullet>().damage;
+                TakeDamage(damageTaken);
+            }
         }
     }
 }

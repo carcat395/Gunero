@@ -8,10 +8,19 @@ public class UIManager : MonoBehaviour
     public GameObject gameUI;
     public GameObject pauseUI;
     public GameObject gameOverUI;
-    
+    public GameObject audioManager;
+
+    AudioManager audio;
+
+    private void Start()
+    {
+        audio = audioManager.GetComponent<AudioManager>();
+    }
+
     public void PauseGame()
     {
         Time.timeScale = 0;
+        audio.GetAudioSource("BGM").Pause();
         gameUI.SetActive(false);
         pauseUI.SetActive(true);
     }
@@ -19,6 +28,7 @@ public class UIManager : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1f;
+        audio.GetAudioSource("BGM").UnPause();
         gameUI.SetActive(true);
         pauseUI.SetActive(false);
     }

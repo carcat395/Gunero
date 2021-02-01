@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum BulletType { Normal, AOE, Poison };
+
 public class Bullet : MonoBehaviour
 {
     public Vector2 velocity;
@@ -11,15 +13,25 @@ public class Bullet : MonoBehaviour
     float timer;
     public int damage;
     public bool enemyBullet = false;
-
-    // Start is called before the first frame update
+    public LayerMask enemyLayers;
+    public int explosionScale;
+    public BulletType bulletType;
+    Animator anim;
+    IEnumerator coroutine;
+    
     void Start()
     {
+        anim = GetComponent<Animator>();
         transform.rotation = Quaternion.Euler(0, 0, rotation);
         timer = lifetime;
     }
 
-    // Update is called once per frame
+    private void OnEnable()
+    {
+        transform.rotation = Quaternion.Euler(0, 0, rotation);
+        timer = lifetime;
+    }
+    
     void Update()
     {
         transform.Translate(velocity * speed * Time.deltaTime);
@@ -30,6 +42,44 @@ public class Bullet : MonoBehaviour
     public void ResetTimer()
     {
         timer = lifetime; 
+    }
+
+    void Explode()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionScale, enemyLayers);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<Enemy>().TakeDamage(damage);
+        }
+
+        Physics2D.OverlapBoxAll(transform.position, new Vector2(2, 3), enemyLayers);
+    }
+
+    IEnumerator Explosion()
+    {
+        speed = 0;
+        anim.SetTrigger("Explode");
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionScale, enemyLayers);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<Enemy>().TakeDamage(damage);
+        }
+        yield return new WaitForSeconds(0.20f);
+        gameObject.SetActive(false);
+    }
+
+    IEnumerator PoisonExplosion()
+    {
+        speed = 0;
+        anim.SetTrigger("Explode");
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionScale, enemyLayers);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            //enemy.GetComponent<Enemy>().TakeDamage(damage);
+            enemy.GetComponent<Enemy>().SetPoison(1, 5);
+        }
+        yield return new WaitForSeconds(0.20f);
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,7 +96,20 @@ public class Bullet : MonoBehaviour
             }
             else
             {
-                gameObject.SetActive(false);
+                if (bulletType == BulletType.AOE)
+                {
+                    coroutine = Explosion();
+                    StartCoroutine(coroutine);
+                }
+                else if(bulletType == BulletType.Poison)
+                {
+                    coroutine = PoisonExplosion();
+                    StartCoroutine(coroutine);
+                }
+                else
+                {
+                    gameObject.SetActive(false);
+                }
             }
         }
     }
