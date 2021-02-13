@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public Joystick joystick;
 
     Animator anim;
+    Player player;
     BillboardCanvas sc;
     Rigidbody2D m_rigidbody2D;
     AudioSource audioClip;
@@ -26,18 +27,23 @@ public class PlayerMovement : MonoBehaviour
         sc = GetComponentInChildren<BillboardCanvas>();
         anim = GetComponent<Animator>();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
+        player = GetComponent<Player>();
     }
 
     void Update()
     {
-        if(!GameManager.gameOver)
+        if(!GameManager.gameOver && !player.pause)
             GetInput();
     }
 
     void FixedUpdate()
     {
-        if(!GameManager.gameOver)
+        if (!GameManager.gameOver && !player.pause)
             Move();
+        else
+        {
+            m_rigidbody2D.velocity = Vector2.zero;
+        }
     }
 
     private void GetInput()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Room : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Room : MonoBehaviour
     public int enemiesLeft;
     private bool roomCleared = false;
     public bool finalRoom;
+    public bool bossRoom;
 
     [Space]
     public GameObject roomManager;
@@ -22,6 +24,9 @@ public class Room : MonoBehaviour
     [Header("List Enemy")]
     public RoomSpawnData[] spawnDatas;
     int index = 0;
+
+    Transform target;
+    public float cameraSizeModifier;
 
     RoomSpawnData GetSpawnData()
     {
@@ -38,13 +43,19 @@ public class Room : MonoBehaviour
 
     }
     
-    public void AssignTarget(Transform target)
+    public void AssignTarget(Transform pTarget)
     {
+        target = pTarget;
         foreach(Transform child in transform)
         {
             if(child.tag == "Enemy")
             {
                 child.GetComponent<EnemyAI>().target = target;
+            }
+            else if(child.tag == "Boss")
+            {
+                child.GetComponentInChildren<Boss>().target = target.gameObject;
+                child.GetComponentInChildren<Animator>().SetBool("Liver", true);
             }
         }
     }
@@ -79,11 +90,21 @@ public class Room : MonoBehaviour
                 }
             }
             */
-            Debug.Log("Spawn: " + GetSpawnData().name);
-            rm.SetCurrRoom(roomNo);
-            rm.SpawnEnemies(roomNo);
-            dm.CloseAllDoors();
-            wavesLeft--;
+            if (bossRoom)
+            {
+                target.GetComponent<Player>().PausePlayer();
+                dm.CloseAllDoors();
+            }
+            else
+            {
+                Debug.Log("Spawn: " + GetSpawnData().name);
+                rm.SetCurrRoom(roomNo);
+                rm.SpawnEnemies(roomNo);
+                dm.CloseAllDoors();
+                wavesLeft--;
+            }
+
+            ModifyCameraSize(0, cameraSizeModifier);
         }
         else
         {
@@ -119,5 +140,21 @@ public class Room : MonoBehaviour
             dm.OpenAllDoors();
             roomCleared = true;
         }
+    }
+
+    void ModifyCameraSize(float sizeIncrement, float targetCameraSize)
+    {
+        var camera = Camera.main;
+        var brain = (camera == null) ? null : camera.GetComponent<CinemachineBrain>();
+        var vcam = (brain == null) ? null : brain.ActiveVirtualCamera as CinemachineVirtualCamera;
+        if (vcam != null)
+            vcam.m_Lens.OrthographicSize += sizeIncrement;
+
+        if (sizeIncrement < targetCameraSize)
+            ModifyCameraSize(sizeIncrement + 1, targetCameraSize);
+        else if (sizeIncrement > targetCameraSize)
+            ModifyCameraSize(sizeIncrement - 1, targetCameraSize);
+        else
+            return;
     }
 }

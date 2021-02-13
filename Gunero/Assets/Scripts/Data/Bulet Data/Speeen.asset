@@ -19,5 +19,5 @@ MonoBehaviour:
   isRandom: 0
   isNotParent: 1
   cooldown: 0.1
-  bulletSpeed: 5
+  bulletSpeed: 4
   bulletVelocity: {x: 1, y: 0}

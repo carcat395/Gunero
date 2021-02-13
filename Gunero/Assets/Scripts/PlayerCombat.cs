@@ -29,6 +29,7 @@ public class PlayerCombat : MonoBehaviour
         return gunDatas[index];
     }
 
+    Player player;
     SpriteRenderer gunRenderer;
     Animator anim;
     Vector2 currPoint;
@@ -43,6 +44,7 @@ public class PlayerCombat : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        player = GetComponent<Player>();
         anim = GetComponent<Animator>();
         timer = cooldown;
         defaultUp = transform.up;
@@ -81,7 +83,7 @@ public class PlayerCombat : MonoBehaviour
     void Update()
     {
         currPos = transform.position;
-        if (!PlayerMovement.isMoving)
+        if (!PlayerMovement.isMoving && !player.pause)
         {
             autoAim();
             if (enemyOnSight)

@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3071407814769789065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1.06}
-  m_LocalScale: {x: 2.4251168, y: 2.4251168, z: 2.4251168}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -52,6 +52,11 @@ MonoBehaviour:
   lifetime: 5
   damage: 5
   enemyBullet: 1
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  explosionScale: 0
+  bulletType: 0
 --- !u!212 &3071407814769789070
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -92,8 +97,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.9150943, g: 0.28201014, b: 0.28201014, a: 1}
+  m_Sprite: {fileID: -644975037489901160, guid: 328a63c6a084fe64f8aa09144126f80f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

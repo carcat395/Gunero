@@ -32,10 +32,14 @@ public class EnemyAI : MonoBehaviour
     Vector3 lastPos;
 
     BulletSpawner bulletspawner;
+    BillboardCanvas sc;
     Seeker seeker;
     Rigidbody2D rb;
     Enemy enemy;
     Animator anim;
+
+    [HideInInspector]
+    public bool firing;
 
     void Start()
     {
@@ -44,6 +48,7 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         enemy = GetComponent<Enemy>();
         bulletspawner = GetComponent<BulletSpawner>();
+        sc = GetComponentInChildren<BillboardCanvas>();
         timer = cooldownTime;
 
         InvokeRepeating("UpdatePath", 0f, .5f);
@@ -86,7 +91,6 @@ public class EnemyAI : MonoBehaviour
             {
                 bulletspawner.Shoot(isShooting = true, firingPoint);
                 timer = cooldownTime;
-
             }
             else
             {
@@ -121,7 +125,7 @@ public class EnemyAI : MonoBehaviour
         }
         else if(type == enemyType.RandomMovement)
         {
-            direction = ((Vector2)path.vectorPath[path.vectorPath.Count] - rb.position).normalized;
+            direction = target.position;
             firingPoint.up = direction;
 
             if (timer <= 0 )
@@ -148,11 +152,13 @@ public class EnemyAI : MonoBehaviour
         {
             isFacingRight = false;
             Flip();
+            sc.flip();
         }
         else if(direction.x > 0 && !isFacingRight)
         {
             isFacingRight = true;
             Flip();
+            sc.flip();
         }
     }
 

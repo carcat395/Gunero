@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public enum EnemyStatus {Normal, Poisoned}
 
@@ -9,6 +10,7 @@ public class Enemy : MonoBehaviour
     [Range(0, .3f)] [SerializeField] public float m_movementSmoothing = .05f;
 
     public string enemyID;
+    public bool isBoss;
     public EnemyStatus status;
 
     public float maxHP;
@@ -30,11 +32,22 @@ public class Enemy : MonoBehaviour
     float timer = 0;
     
     public HealthBar healthbar;
+    public TMP_Text damageTaken;
     public Transform firingPoint;
     public LayerMask enemyLayers;
 
+    Animator anim;
+
     void Awake()
     {
+        if (isBoss)
+        {
+            anim = GetComponentInChildren<Animator>();
+        }
+        else
+        {
+            anim = GetComponent<Animator>();
+        }
         HP = maxHP;
         healthbar.SetMaxHealth(maxHP);
         status = EnemyStatus.Normal;
@@ -42,6 +55,8 @@ public class Enemy : MonoBehaviour
 
     private void OnEnable()
     {
+        if(!isBoss)
+            anim.SetBool("Liver", true);
         healthbar.SetMaxHealth(maxHP);
         HP = maxHP;
     }
@@ -60,14 +75,17 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        damageTaken.text = "-" + damage.ToString();
+        anim.SetTrigger("Hurt");
         HP -= damage;
         healthbar.SetHealth(HP);
         if (HP <= 0)
         {
-            GetComponentInParent<Room>().DecreaseEnemyCount();
+            //GetComponentInParent<Room>().DecreaseEnemyCount();
             Debug.Log("Gained :" + enemyWorth + "parts");
             GameManager.AddToParts(enemyWorth);
-            gameObject.SetActive(false);
+            anim.SetBool("Liver", false);
+            //gameObject.SetActive(false);
         }
     }
 

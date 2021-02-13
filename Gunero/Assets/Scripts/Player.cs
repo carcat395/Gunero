@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float recoveryTime;
     float recoveryTimer;
     bool isDead;
+    public bool pause;
 
     [Space]
     public HealthBar healthbar;
@@ -48,6 +49,16 @@ public class Player : MonoBehaviour
             isDead = true;
             gm.SetGameOver();
         }
+    }
+
+    public void PausePlayer()
+    {
+        pause = true;
+    }
+
+    public void ResumePlayer()
+    {
+        pause = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

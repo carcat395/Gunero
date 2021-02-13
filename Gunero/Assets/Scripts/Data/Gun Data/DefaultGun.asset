@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 939997458846612562, guid: 2af88c0e32206214ea67296fbb9d4b9d, type: 3}
   - {fileID: -3369154337016089237, guid: 2af88c0e32206214ea67296fbb9d4b9d, type: 3}
   - {fileID: 8409350454167013563, guid: 2af88c0e32206214ea67296fbb9d4b9d, type: 3}
-  cooldown: 0.5
+  cooldown: 0.2
   buletSpeed: 5

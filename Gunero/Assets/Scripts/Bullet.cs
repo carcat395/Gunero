@@ -36,7 +36,23 @@ public class Bullet : MonoBehaviour
     {
         transform.Translate(velocity * speed * Time.deltaTime);
         timer -= Time.deltaTime;
-        if (timer <= 0) gameObject.SetActive(false);
+        if (timer <= 0)
+        {
+            if (bulletType == BulletType.AOE)
+            {
+                coroutine = Explosion();
+                StartCoroutine(coroutine);
+            }
+            else if (bulletType == BulletType.Poison)
+            {
+                coroutine = PoisonExplosion();
+                StartCoroutine(coroutine);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+        }
     }
 
     public void ResetTimer()
@@ -62,7 +78,10 @@ public class Bullet : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionScale, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(damage);
+            if (enemy.tag == "Enemy" || enemy.tag == "Boss")
+                enemy.GetComponent<Enemy>().TakeDamage(damage);
+            else if (enemy.tag == "Player")
+                enemy.GetComponent<Player>().TakeDamage(damage);
         }
         yield return new WaitForSeconds(0.20f);
         gameObject.SetActive(false);
@@ -84,9 +103,9 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Obstacle" || collision.tag == "Player" || collision.tag == "Enemy")
+        if (collision.tag == "Obstacle" || collision.tag == "Player" || collision.tag == "Enemy" || collision.tag == "Boss")
         {
-            if (enemyBullet && collision.tag == "Enemy")
+            if (enemyBullet && (collision.tag == "Enemy" || collision.tag == "Boss"))
             {
                 return;
             }

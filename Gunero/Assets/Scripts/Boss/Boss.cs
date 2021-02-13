@@ -6,40 +6,49 @@ public enum Boss1State {Idle, SpeenShot, WideAreaShot, ApproachingPlayer}
 
 public class Boss : MonoBehaviour
 {
-    public Boss1State bossState;
+    public Boss1State nextState;
+    Boss1State lastState;
 
     bool Phase2;
-    int maxHP;
-    public int currHP;
+    public int maxHP;
+    int currHP;
 
-    public float rotation;
-    float startingRotation;
-    public float seconds;
-    float t = 0;
+    public int speed;
 
     public GameObject target;
     public GameObject shootingPoint;
+    public GameObject vCam;
 
     void Start()
     {
-        
+        nextState = Boss1State.ApproachingPlayer;
     }
     
     void Update()
     {
-        if(bossState == Boss1State.Idle)
+        
+    }
+
+    public Boss1State DetermineNextState()
+    {
+        Debug.Log("distance to player : " + Vector3.Distance(transform.position, target.transform.position));
+        if (Vector3.Distance(transform.position, target.transform.position) <= 2 && nextState != Boss1State.WideAreaShot)
         {
-            return;
+            lastState = nextState;
+            nextState = Boss1State.WideAreaShot;
         }
-        else if (bossState == Boss1State.SpeenShot)
+        else
         {
-            t += Time.deltaTime;
-            if (t >= seconds)
+            if (nextState == Boss1State.SpeenShot || lastState == Boss1State.SpeenShot)
             {
-                t = 0;
-                startingRotation = transform.eulerAngles.z;
-            };
-            transform.localRotation = Quaternion.Euler(0, 0, Mathf.Lerp(startingRotation, startingRotation + rotation, t / seconds));
+                nextState = Boss1State.ApproachingPlayer;
+            }
+            else if (nextState == Boss1State.ApproachingPlayer || lastState == Boss1State.ApproachingPlayer)
+            {
+                nextState = Boss1State.SpeenShot;
+            }
         }
+
+        return nextState;
     }
 }

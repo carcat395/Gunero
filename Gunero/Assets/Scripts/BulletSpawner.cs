@@ -5,9 +5,10 @@ using UnityEngine;
 public class BulletSpawner : MonoBehaviour
 {
     public BulletSpawnData[] spawnDatas;
-    int index = 0;
+    public int index = 0;
     public bool singleShot;
     public bool isSequenceRandom;
+    public bool inSequence;
     public bool spawningAutomatically;
     BulletSpawnData GetSpawnData()
     {
@@ -46,7 +47,7 @@ public class BulletSpawner : MonoBehaviour
                     {
                         index = Random.Range(0, spawnDatas.Length);
                     }
-                    else
+                    else if(inSequence)
                     {
                         index++;
                         if (index >= spawnDatas.Length) index = 0;
@@ -96,6 +97,11 @@ public class BulletSpawner : MonoBehaviour
         return rotations;
     }
 
+    public void ChangeIndex(int i)
+    {
+        index = i;
+    }
+
     public GameObject[] SpawnBullets()
     {
         rotations = new float[GetSpawnData().numberOfBullets];
@@ -127,7 +133,7 @@ public class BulletSpawner : MonoBehaviour
             var b = spawnedBullets[i].GetComponent<Bullet>();
             if (tracking)
             {
-                b.rotation = firingPoint.eulerAngles.z + 90f;
+                b.rotation = rotations[i] + firingPoint.eulerAngles.z + 225;
             }
             else
                 b.rotation = rotations[i];
